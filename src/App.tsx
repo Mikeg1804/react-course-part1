@@ -6,12 +6,17 @@ import { useState } from "react";
 import { ListGroup } from "react-bootstrap";
 import MikeListGroup from "./components/MikeListGroup";
 import MikeAlert from "./components/MikeAlert";
+import MikeNavBar from "./components/MikeNavBar";
+import MikeCart from "./components/MikeCart";
+import MikeNameChanger from "./components/MikeNameChanger";
+import MikePizza from "./components/MikePizza";
 
-// Next time pick up at state versus props in the component section of the codewithMosh website. Go back to the MikeListGroup.
+// Next time pick up at updating nested objects in the managing state component section of the codewithMosh website. Go back to the MikeListGroup.
 
 function App() {
   let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
   const [BootStrapAlertVisable, setBootstrapAlertVisable]=useState(false)
+  const [cartItems, setCartItems] = useState(["Product1", "Product2"]);
   return (
   <>
   <UserList />
@@ -22,6 +27,10 @@ function App() {
     <MikeAlert>
       Hello <span>World</span>
     </MikeAlert>
+    <MikeNavBar cartItemsCount={cartItems.length}/>
+    <MikeCart cartItems={cartItems} onClear={()=>setCartItems([])}/>
+    <MikeNameChanger/>
+    <MikePizza/>
    </>
   )
 }
