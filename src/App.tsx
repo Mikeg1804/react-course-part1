@@ -10,6 +10,7 @@ import MikeNavBar from "./components/MikeNavBar";
 import MikeCart from "./components/MikeCart";
 import MikeNameChanger from "./components/MikeNameChanger";
 import MikePizza from "./components/MikePizza";
+import MikeCartObjectState from "./components/MikeCartObjectState";
 
 // Next time pick up at updating nested objects in the managing state component section of the codewithMosh website. Go back to the MikeListGroup.
 
@@ -31,6 +32,7 @@ function App() {
     <MikeCart cartItems={cartItems} onClear={()=>setCartItems([])}/>
     <MikeNameChanger/>
     <MikePizza/>
+    <MikeCartObjectState/>
    </>
   )
 }
